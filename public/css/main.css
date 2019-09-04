@@ -1,0 +1,41 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+a:link {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+a:hover {
+  color: white;
+}
+a:active {
+  color: white;
+}
+
+.black-text{
+  color: black;
+}
+.black-text a:link {
+  color: black;
+}
+.black-text a:visited {
+  color: black;
+}
+.black-text a:hover {
+  color: black;
+}
+.black-text a:active {
+  color: black;
+}
+
+h5{
+  color: red;
+}
+
+#blue-text{
+  color: blue;
+}
