@@ -41,6 +41,7 @@ Create a `.dockerignore` file with at least the following. Be able to explain wh
 .*
 docker-compose.yml
 *.md
+
 ```
 
 ## Enter your container
