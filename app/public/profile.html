@@ -32,14 +32,13 @@
     <div class="container black-text">
       <div class="row col-sm-6 offset-sm-3 col-md-4 offset-md-4">
         <div class="card" style="width: 18rem;">
-          <a href="img/will-smith.jpg"><img src="img/will-smith_TN.jpg" class="card-img-top" alt="Will Smith"></a>
-          <cite>Time Magazine</cite>
-          <div class="card-body">
-            <h5 class="card-title" id="blue-text"><b>Name:</b> Will Smith</h5>
-            <p class="card-text"><b>Origin:</b> U.S.</p>
-            <p class="card-text"><b>Birthday:</b> 9.25.1968</p>
-            <p class="card-text"><b>Age:</b> 50 years old</p>
-            <p class="card-text"><b>Email:</b> <a href="mailto:wmsith@iu.edu">wsmith@iu.edu</a></p>
+          <div id = "patientWaitingApp" class="card-body">
+            <a v-bind:href="patients.picture.large"><img v-bind:src="patients.picture.medium" class="card-img-top" alt="Picture"></a>
+            <cite>Time Magazine</cite>
+            <h5 class="card-title" id="blue-text"><b>Name:</b> {{ patients.name.first }} {{ patients.name.last }}</h5>
+            <p class="card-text"><b>Origin</b> {{ patients.location.state }}</p>
+            <p class="card-text"><b>Age:</b> {{ patients.dob.age }}</p>
+            <p class="card-text"><b>Email:</b> <a v-bind:href="'mailto:'+patients.email">{{patients.email}}</a></p>
           </div>
         </div>
       </div>
@@ -48,6 +47,8 @@
     <br>
 
     <!-- Optional JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/waiting.app.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
