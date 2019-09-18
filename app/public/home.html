@@ -20,8 +20,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="index.html">Home</a>
-          <a class="nav-item nav-link active" href="profile.html">Profile<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link active" href="index.html">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="profile.html">Profile</a>
           <a class="nav-item nav-link" href="books.html">Books</a>
         </div>
       </div>
@@ -29,26 +29,64 @@
 
     <br>
     <br>
-    <div class="container black-text">
-      <div class="row col-sm-6 offset-sm-3 col-md-4 offset-md-4">
-        <div class="card" style="width: 18rem;">
-          <div id = "patientWaitingApp" class="card-body">
-            <a v-bind:href="patients.picture.large"><img v-bind:src="patients.picture.medium" class="card-img-top" alt="Picture"></a>
-            <cite>Time Magazine</cite>
-            <h5 class="card-title" id="blue-text"><b>Name:</b> {{ patients.name.first }} {{ patients.name.last }}</h5>
-            <p class="card-text"><b>Origin</b> {{ patients.nat }}</p>
-            <p class="card-text"><b>Age:</b> {{ patients.dob.age }}</p>
-            <p class="card-text"><b>Email:</b> <a v-bind:href="'mailto:'+patients.email">{{patients.email}}</a></p>
-          </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" placeholder="Jane">
         </div>
-      </div>
+        <div class="form-group">
+          <label for="author">Last Name</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Doe">
+        </div>
+        <div class="form-group">
+          <label for="yearPub">DOB</label>
+          <input type="date" class="form-control" id="dob" placeholder="1/1/1900">
+        </div>
+        <div class="form-group">
+          <label for="sexAtBirth">Sex at Birth</label>
+          <select class="form-control" id="sexAtBirth">
+            <option>M</option>
+            <option>F</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
+
+    <br>
     <br>
     <br>
 
+    <div class="container">
+      <table id="recordWaitingApp" class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">PatientGuid</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Sex at Birth</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="p in patients">
+            <th scope="row">{{ p.patientGuid }}</th>
+            <td>{{ p.firstName }}</td>
+            <td>{{ p.lastName }}</td>
+            <td>{{ p.dob }}</td>
+            <td>{{ p.sexAtBirth }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <!-- Optional JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/waiting.app.js"></script>
+    <script src="js/record.app.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
