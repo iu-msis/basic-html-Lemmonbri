@@ -3,6 +3,12 @@ body {
   color: white;
 }
 
+/*Patient Waiting Blocks*/
+.patientWaiting {
+  border: 3px solid white;
+}
+
+
 a:link {
   color: white;
 }
