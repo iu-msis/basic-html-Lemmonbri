@@ -33,12 +33,15 @@
       <div class="row col-sm-6 offset-sm-3 col-md-4 offset-md-4">
         <div class="card" style="width: 18rem;">
           <div id = "profileRender" class="card-body">
-            <a v-bind:href="patients.picture.large"><img v-bind:src="patients.picture.medium" class="card-img-top" alt="Picture"></a>
-            <cite>Time Magazine</cite>
-            <h5 class="card-title" id="blue-text"><b>Name:</b> {{ patients.name.first }} {{ patients.name.last }}</h5>
-            <p class="card-text"><b>Origin</b> {{ patients.nat }}</p>
-            <p class="card-text"><b>Age:</b> {{ patients.dob.age }}</p>
-            <p class="card-text"><b>Email:</b> <a v-bind:href="'mailto:'+patients.email">{{patients.email}}</a></p>
+            <form @submit.prevent="fetchPatients()">
+              <button type="submit" class="btn btn-primary float-right">Refresh</button>
+              <a v-bind:href="patients.picture.large"><img v-bind:src="patients.picture.medium" class="card-img-top" alt="Picture"></a>
+              <cite>Time Magazine</cite>
+              <h5 class="card-title" id="blue-text"><b>Name:</b> {{ patients.name.first }} {{ patients.name.last }}</h5>
+              <p class="card-text"><b>Origin</b> {{ patients.nat }}</p>
+              <p class="card-text"><b>Age:</b> {{ patients.dob.age }}</p>
+              <p class="card-text"><b>Email:</b> <a v-bind:href="'mailto:'+patients.email">{{patients.email}}</a></p>
+            </form>
           </div>
         </div>
       </div>
