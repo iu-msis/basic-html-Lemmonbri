@@ -1,0 +1,82 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+/*Patient Waiting Blocks*/
+.patientWaiting {
+  border: 3px solid white;
+}
+
+
+a:link {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+a:hover {
+  color: white;
+}
+a:active {
+  color: white;
+}
+
+.black-text{
+  color: black;
+}
+.black-text a:link {
+  color: black;
+}
+.black-text a:visited {
+  color: black;
+}
+.black-text a:hover {
+  color: black;
+}
+.black-text a:active {
+  color: black;
+}
+
+h5{
+  color: red;
+}
+
+#blue-text{
+  color: blue;
+}
+
+th[role=columnheader]:not(.no-sort) {
+	cursor: pointer;
+}
+
+th[role=columnheader]:not(.no-sort):after {
+	content: '';
+	float: right;
+	margin-top: 7px;
+	border-width: 0 4px 4px;
+	border-style: solid;
+	border-color: white transparent;
+	visibility: hidden;
+	opacity: 0;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+th[aria-sort=ascending]:not(.no-sort):after {
+	border-bottom: none;
+	border-width: 4px 4px 0;
+}
+
+th[aria-sort]:not(.no-sort):after {
+	visibility: visible;
+	opacity: 0.4;
+
+}
+
+th[role=columnheader]:not(.no-sort):hover:after {
+	visibility: visible;
+	opacity: 1;
+}
